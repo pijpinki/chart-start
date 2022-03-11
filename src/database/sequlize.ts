@@ -27,6 +27,6 @@ const stats = sequelize.define('Stats', {
     type: DataTypes.DATE,
     allowNull: false,
   },
-}, { tableName: 'stats' });
+}, { tableName: 'stop_war_stats', timestamps: false });
 
 export const statsModal = stats;
