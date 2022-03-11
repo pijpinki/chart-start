@@ -1,5 +1,5 @@
 import { Get, Controller } from '@nestjs/common';
-import { statsModal } from '../database';
+import { StatsModal } from '../database';
 
 class StatsResponseDto {
   id: number;
@@ -12,7 +12,7 @@ class StatsResponseDto {
 export class StatsRouter {
   @Get()
   async getStats(): Promise<Array<StatsResponseDto>> {
-    const stats = await statsModal.findAll();
+    const stats = await StatsModal.findAll();
 
     return stats.map((stat: any) => ({
       id: parseInt(stat.id, 10),
